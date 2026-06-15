@@ -1,0 +1,14 @@
+{
+  "name": "@lexai/design-tokens",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./tokens.css": "./src/tokens.css"
+  },
+  "scripts": {
+    "build": "echo 'CSS tokens — no build step'",
+    "typecheck": "echo 'CSS tokens — no typecheck'",
+    "lint": "echo 'CSS tokens — no lint'",
+    "test": "echo 'CSS tokens — no tests'"
+  }
+}
