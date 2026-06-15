@@ -1,0 +1,43 @@
+{
+  "name": "lexai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LexAI v2 — Despacho digital premium de inteligencia artificial jurídica",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "db:generate": "pnpm --filter @lexai/api exec prisma generate",
+    "db:migrate": "pnpm --filter @lexai/api exec prisma migrate dev",
+    "db:migrate:deploy": "pnpm --filter @lexai/api exec prisma migrate deploy",
+    "db:seed": "pnpm --filter @lexai/api exec prisma db seed",
+    "db:studio": "pnpm --filter @lexai/api exec prisma studio",
+    "db:local": "node apps/api/scripts/start-embedded-db.mjs",
+    "dev:full": "node scripts/dev-with-db.mjs",
+    "preflight": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "smoke": "node scripts/smoke-runtime.mjs",
+    "start": "node scripts/start-project.mjs",
+    "docker:up": "docker compose -f docker/docker-compose.yml up -d",
+    "docker:down": "docker compose -f docker/docker-compose.yml down",
+    "clean": "turbo run clean && rimraf node_modules"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1"
+  },
+  "packageManager": "pnpm@10.24.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}
