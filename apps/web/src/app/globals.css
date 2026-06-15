@@ -1,0 +1,51 @@
+@import '@lexai/design-tokens/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-white/[0.08];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-lex-bg-primary font-body text-lex-text-primary antialiased;
+  }
+
+  ::selection {
+    background: rgba(197, 164, 110, 0.35);
+    color: #fafafa;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-lex-accent-gold to-lex-accent-gold-hover bg-clip-text text-transparent;
+  }
+
+  .hero-glow {
+    background: radial-gradient(
+      ellipse 80% 60% at 50% -30%,
+      rgba(197, 164, 110, 0.18),
+      transparent 70%
+    );
+  }
+}
